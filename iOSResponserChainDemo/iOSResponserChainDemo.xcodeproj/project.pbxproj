@@ -15,6 +15,7 @@
 		23821BEB26F34A6E0040FF93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23821BE926F34A6E0040FF93 /* LaunchScreen.storyboard */; };
 		23821BEE26F34A6E0040FF93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23821BED26F34A6E0040FF93 /* main.m */; };
 		2382276326FC3083007D2CC8 /* ZJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2382276226FC3083007D2CC8 /* ZJPerson.m */; };
+		2382335026FC6C65007D2CC8 /* ZJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		23821BED26F34A6E0040FF93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2382276126FC3083007D2CC8 /* ZJPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPerson.h; sourceTree = "<group>"; };
 		2382276226FC3083007D2CC8 /* ZJPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPerson.m; sourceTree = "<group>"; };
+		2382334E26FC6C65007D2CC8 /* ZJTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTableViewCell.h; sourceTree = "<group>"; };
+		2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				23821BDF26F34A6A0040FF93 /* SceneDelegate.m */,
 				23821BE126F34A6A0040FF93 /* ViewController.h */,
 				23821BE226F34A6A0040FF93 /* ViewController.m */,
+				2382334E26FC6C65007D2CC8 /* ZJTableViewCell.h */,
+				2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */,
 				2382276126FC3083007D2CC8 /* ZJPerson.h */,
 				2382276226FC3083007D2CC8 /* ZJPerson.m */,
 				23821BE426F34A6A0040FF93 /* Main.storyboard */,
@@ -155,6 +160,7 @@
 				23821BE326F34A6A0040FF93 /* ViewController.m in Sources */,
 				23821BDD26F34A6A0040FF93 /* AppDelegate.m in Sources */,
 				23821BEE26F34A6E0040FF93 /* main.m in Sources */,
+				2382335026FC6C65007D2CC8 /* ZJTableViewCell.m in Sources */,
 				23821BE026F34A6A0040FF93 /* SceneDelegate.m in Sources */,
 				2382276326FC3083007D2CC8 /* ZJPerson.m in Sources */,
 			);
