@@ -53,7 +53,9 @@
 //    self.detailTextLabel.textColor = [UIColor blueColor];
     NSLog(@"self.detailTextLabel.text : %@ superView: %@",self.textLabel.text,self.textLabel.superview);
     
-    [self.imageBtn setImage:[UIImage imageNamed:@"icon_home_search_top1"] forState:UIControlStateNormal];
+//    [self.imageBtn setImage:[UIImage imageNamed:@"icon_home_search_top1"] forState:UIControlStateNormal];
+    [self.imageBtn setBackgroundImage:[UIImage imageNamed:@"icon_home_search_top1"] forState:UIControlStateNormal];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -73,6 +75,9 @@
         _btn.backgroundColor = [UIColor yellowColor];
         [_btn setTitle:@"btn" forState:UIControlStateNormal];
         [_btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_btn setContentMode:UIViewContentModeScaleAspectFill];
+        _btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+        [_btn.imageView setContentMode:UIViewContentModeScaleAspectFill];
     }
     return _btn;
 }
@@ -82,8 +87,8 @@
         _imageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_imageBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         _imageBtn.backgroundColor = [UIColor whiteColor];
-//        [_imageBtn setTitle:@"btn" forState:UIControlStateNormal];
-//        [_imageBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_imageBtn setContentMode:UIViewContentModeScaleAspectFit];
+        _imageBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     return _imageBtn;
 }
@@ -105,7 +110,7 @@
     //MARK: 这里重写父类方法很重要
     [super layoutSubviews];
     self.btn.frame = CGRectMake(100, 10, 50, 20);
-    self.imageBtn.frame = CGRectMake(160, 10, 80, 80);
+    self.imageBtn.frame = CGRectMake(160.2, 10, 80, 80);
     self.imgView.frame = CGRectMake(250, 10, 80, 80);
 }
 
