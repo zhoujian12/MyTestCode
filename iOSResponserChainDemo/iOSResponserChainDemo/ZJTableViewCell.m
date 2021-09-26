@@ -48,9 +48,9 @@
 - (void)configTitle:(NSString *)title num:(NSInteger)num{
 
     self.textLabel.text = title;
-    self.detailTextLabel.text = title;
-    [self.contentView bringSubviewToFront:self.textLabel];
-    self.detailTextLabel.textColor = [UIColor blueColor];
+//    self.detailTextLabel.text = title;
+//    [self.contentView bringSubviewToFront:self.textLabel];
+//    self.detailTextLabel.textColor = [UIColor blueColor];
     NSLog(@"self.detailTextLabel.text : %@ superView: %@",self.textLabel.text,self.textLabel.superview);
     
     [self.imageBtn setImage:[UIImage imageNamed:@"icon_home_search_top1"] forState:UIControlStateNormal];
@@ -103,7 +103,7 @@
 
 - (void)layoutSubviews{
     //MARK: 这里重写父类方法很重要
-//    [super layoutSubviews];
+    [super layoutSubviews];
     self.btn.frame = CGRectMake(100, 10, 50, 20);
     self.imageBtn.frame = CGRectMake(160, 10, 80, 80);
     self.imgView.frame = CGRectMake(250, 10, 80, 80);
