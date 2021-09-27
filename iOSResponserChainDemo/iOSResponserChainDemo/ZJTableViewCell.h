@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)indentifier;
 
-- (void)configTitle:(NSString *)title;
+- (void)configTitle:(NSString *)title num:(NSInteger)num;
 
 @end
 
