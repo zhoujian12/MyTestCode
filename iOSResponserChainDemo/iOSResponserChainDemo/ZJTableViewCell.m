@@ -41,6 +41,44 @@
     [self.contentView addSubview:self.imgView];
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    NSLog(@"ZJTableViewCell gestureRecognizerShouldBegin gestureRecognizer:%@",gestureRecognizer);
+    return  YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveEvent:(UIEvent *)event{
+    NSLog(@"ZJTableViewCell shouldReceiveEvent gestureRecognizer:%@",gestureRecognizer);
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceivePress:(UIPress *)press{
+    NSLog(@"ZJTableViewCell shouldReceivePress ges:%@ press:%@",gestureRecognizer,press);
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    
+    NSLog(@"ZJTableViewCell shouldReceiveTouch ges:%@ touch:%@",gestureRecognizer,touch);
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    NSLog(@"ZJTableViewCell shouldRequireFailureOfGestureRecognizer ges:%@ otherGes:%@",gestureRecognizer,otherGestureRecognizer);
+    return  YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    NSLog(@"ZJTableViewCell shouldRecognizeSimultaneouslyWithGestureRecognizer ges:%@ otherGes:%@",gestureRecognizer,otherGestureRecognizer);
+    return true;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    NSLog(@"ZJTableViewCell shouldBeRequiredToFailByGestureRecognizer ges:%@ otherGes:%@",gestureRecognizer,otherGestureRecognizer);
+    return  YES;
+}
+
 - (void)tapAction:(UITapGestureRecognizer *)tap{
     NSLog(@"tapAction tap:%@",tap);
 }
@@ -67,6 +105,24 @@
     [super touchesBegan:touches withEvent:event];
 
 }
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesMoved:touches withEvent:event];
+    NSLog( @"ZJDebug - ZJTableViewCell - touchesMoved touches: %p ",&touches);
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+    NSLog( @"ZJDebug - ZJTableViewCell - touchesEnded touches: %p ",&touches);
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesCancelled:touches withEvent:event];
+
+    NSLog( @"ZJDebug - ZJTableViewCell - touchesCancelled touches: %p ",&touches);
+
+}
+
 
 - (UIButton *)btn{
     if (!_btn) {
