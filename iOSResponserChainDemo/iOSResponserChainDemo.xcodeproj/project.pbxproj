@@ -17,7 +17,7 @@
 		2382276326FC3083007D2CC8 /* ZJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2382276226FC3083007D2CC8 /* ZJPerson.m */; };
 		2382335026FC6C65007D2CC8 /* ZJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */; };
 		2382335326FDC1A1007D2CC8 /* ZJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2382335226FDC1A1007D2CC8 /* ZJView.m */; };
-		2382335526FDCB10007D2CC8 /* project.md in Resources */ = {isa = PBXBuildFile; fileRef = 2382335426FDCB10007D2CC8 /* project.md */; };
+		2382335526FDCB10007D2CC8 /* README1.md in Resources */ = {isa = PBXBuildFile; fileRef = 2382335426FDCB10007D2CC8 /* README1.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,8 @@
 		2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTableViewCell.m; sourceTree = "<group>"; };
 		2382335126FDC1A1007D2CC8 /* ZJView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJView.h; sourceTree = "<group>"; };
 		2382335226FDC1A1007D2CC8 /* ZJView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJView.m; sourceTree = "<group>"; };
-		2382335426FDCB10007D2CC8 /* project.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = project.md; sourceTree = "<group>"; };
+		2382335426FDCB10007D2CC8 /* README1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README1.md; sourceTree = "<group>"; };
+		238C55082701DEF300FE418B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +57,8 @@
 		23821BCF26F34A6A0040FF93 = {
 			isa = PBXGroup;
 			children = (
-				2382335426FDCB10007D2CC8 /* project.md */,
+				238C55082701DEF300FE418B /* README.md */,
+				2382335426FDCB10007D2CC8 /* README1.md */,
 				23821BDA26F34A6A0040FF93 /* iOSResponserChainDemo */,
 				23821BD926F34A6A0040FF93 /* Products */,
 			);
@@ -152,7 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2382335526FDCB10007D2CC8 /* project.md in Resources */,
+				2382335526FDCB10007D2CC8 /* README1.md in Resources */,
 				23821BEB26F34A6E0040FF93 /* LaunchScreen.storyboard in Resources */,
 				23821BE826F34A6E0040FF93 /* Assets.xcassets in Resources */,
 				23821BE626F34A6A0040FF93 /* Main.storyboard in Resources */,

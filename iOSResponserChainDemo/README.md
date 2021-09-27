@@ -19,4 +19,14 @@
 - 不只UIButton是直接由UIApplication派发事件的，所有继承自UIControl的类，都是由UIApplication直接派发事件的。
 
 
-# http://kmanong.top/kmn/qxw/form/article?id=15003&cate=63
+# 事件冲突 http://kmanong.top/kmn/qxw/form/article?id=15003&cate=63
+
+
+# iOS 事件回调机制 https://www.jianshu.com/p/32db17c980f7
+
+# 由手势与 UIControl 冲突引发的「事件处理全家桶」探索 https://juejin.cn/post/6908553699732226061  
+优秀文章！！！
+
+# iOS 中的事件响应 https://juejin.cn/post/6989049513172303885
+
+
