@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		235C83CE2705A7C800CCD1FF /* ZJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C83CD2705A7C800CCD1FF /* ZJBaseTableViewCell.m */; };
+		235C83D22705B7A300CCD1FF /* ZJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C83D12705B7A300CCD1FF /* ZJBaseViewController.m */; };
+		235C83D52705B7C900CCD1FF /* ZJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C83D42705B7C900CCD1FF /* ZJWebViewController.m */; };
+		235C83DB2705BC0100CCD1FF /* ZJWkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C83DA2705BC0100CCD1FF /* ZJWkWebView.m */; };
 		23821BDD26F34A6A0040FF93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23821BDC26F34A6A0040FF93 /* AppDelegate.m */; };
 		23821BE026F34A6A0040FF93 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23821BDF26F34A6A0040FF93 /* SceneDelegate.m */; };
 		23821BE326F34A6A0040FF93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23821BE226F34A6A0040FF93 /* ViewController.m */; };
@@ -24,6 +27,12 @@
 		235C83CC2705A7C800CCD1FF /* ZJBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseTableViewCell.h; sourceTree = "<group>"; };
 		235C83CD2705A7C800CCD1FF /* ZJBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseTableViewCell.m; sourceTree = "<group>"; };
 		235C83CF2705B0DE00CCD1FF /* ZJConfigInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJConfigInfo.h; sourceTree = "<group>"; };
+		235C83D02705B7A300CCD1FF /* ZJBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJBaseViewController.h; sourceTree = "<group>"; };
+		235C83D12705B7A300CCD1FF /* ZJBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJBaseViewController.m; sourceTree = "<group>"; };
+		235C83D32705B7C900CCD1FF /* ZJWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJWebViewController.h; sourceTree = "<group>"; };
+		235C83D42705B7C900CCD1FF /* ZJWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJWebViewController.m; sourceTree = "<group>"; };
+		235C83D92705BC0100CCD1FF /* ZJWkWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJWkWebView.h; sourceTree = "<group>"; };
+		235C83DA2705BC0100CCD1FF /* ZJWkWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJWkWebView.m; sourceTree = "<group>"; };
 		23821BD826F34A6A0040FF93 /* iOSResponserChainDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSResponserChainDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23821BDB26F34A6A0040FF93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		23821BDC26F34A6A0040FF93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +65,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		235C83D62705BB3400CCD1FF /* WebModule */ = {
+			isa = PBXGroup;
+			children = (
+				235C83D32705B7C900CCD1FF /* ZJWebViewController.h */,
+				235C83D42705B7C900CCD1FF /* ZJWebViewController.m */,
+				235C83D92705BC0100CCD1FF /* ZJWkWebView.h */,
+				235C83DA2705BC0100CCD1FF /* ZJWkWebView.m */,
+			);
+			path = WebModule;
+			sourceTree = "<group>";
+		};
+		235C83D72705BB4800CCD1FF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				235C83CC2705A7C800CCD1FF /* ZJBaseTableViewCell.h */,
+				235C83CD2705A7C800CCD1FF /* ZJBaseTableViewCell.m */,
+				235C83D02705B7A300CCD1FF /* ZJBaseViewController.h */,
+				235C83D12705B7A300CCD1FF /* ZJBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		235C83D82705BB6500CCD1FF /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				23821BE126F34A6A0040FF93 /* ViewController.h */,
+				23821BE226F34A6A0040FF93 /* ViewController.m */,
+				2382335126FDC1A1007D2CC8 /* ZJView.h */,
+				2382335226FDC1A1007D2CC8 /* ZJView.m */,
+				2382334E26FC6C65007D2CC8 /* ZJTableViewCell.h */,
+				2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		23821BCF26F34A6A0040FF93 = {
 			isa = PBXGroup;
 			children = (
@@ -76,18 +120,13 @@
 		23821BDA26F34A6A0040FF93 /* iOSResponserChainDemo */ = {
 			isa = PBXGroup;
 			children = (
+				235C83D82705BB6500CCD1FF /* HomePage */,
+				235C83D72705BB4800CCD1FF /* Base */,
+				235C83D62705BB3400CCD1FF /* WebModule */,
 				23821BDB26F34A6A0040FF93 /* AppDelegate.h */,
 				23821BDC26F34A6A0040FF93 /* AppDelegate.m */,
 				23821BDE26F34A6A0040FF93 /* SceneDelegate.h */,
 				23821BDF26F34A6A0040FF93 /* SceneDelegate.m */,
-				23821BE126F34A6A0040FF93 /* ViewController.h */,
-				23821BE226F34A6A0040FF93 /* ViewController.m */,
-				2382335126FDC1A1007D2CC8 /* ZJView.h */,
-				2382335226FDC1A1007D2CC8 /* ZJView.m */,
-				2382334E26FC6C65007D2CC8 /* ZJTableViewCell.h */,
-				2382334F26FC6C65007D2CC8 /* ZJTableViewCell.m */,
-				235C83CC2705A7C800CCD1FF /* ZJBaseTableViewCell.h */,
-				235C83CD2705A7C800CCD1FF /* ZJBaseTableViewCell.m */,
 				2382276126FC3083007D2CC8 /* ZJPerson.h */,
 				2382276226FC3083007D2CC8 /* ZJPerson.m */,
 				23821BE426F34A6A0040FF93 /* Main.storyboard */,
@@ -176,7 +215,10 @@
 				235C83CE2705A7C800CCD1FF /* ZJBaseTableViewCell.m in Sources */,
 				23821BDD26F34A6A0040FF93 /* AppDelegate.m in Sources */,
 				23821BEE26F34A6E0040FF93 /* main.m in Sources */,
+				235C83D52705B7C900CCD1FF /* ZJWebViewController.m in Sources */,
 				2382335026FC6C65007D2CC8 /* ZJTableViewCell.m in Sources */,
+				235C83DB2705BC0100CCD1FF /* ZJWkWebView.m in Sources */,
+				235C83D22705B7A300CCD1FF /* ZJBaseViewController.m in Sources */,
 				23821BE026F34A6A0040FF93 /* SceneDelegate.m in Sources */,
 				2382276326FC3083007D2CC8 /* ZJPerson.m in Sources */,
 			);

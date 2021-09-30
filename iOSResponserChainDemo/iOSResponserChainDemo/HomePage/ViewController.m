@@ -16,6 +16,7 @@
 #import <objc/runtime.h>
 #import "ZJBaseTableViewCell.h"
 #import "ZJConfigInfo.h"
+#import "ZJWebViewController.h"
 
 static const NSInteger kItemCount = 4;
 
@@ -105,6 +106,11 @@ static const NSInteger kItemCount = 4;
     //这里没有调用，后续有时间可以排查一下
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NSLog( @"ZJDebug - didSelectRowAtIndexPath section-row:%ld-%ld ",(long)indexPath.section,(long)indexPath.row);
+    
+    if (indexPath.row == 3) {
+        ZJWebViewController *v = [[ZJWebViewController alloc] init];
+        [self.navigationController pushViewController:v animated:NO];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
