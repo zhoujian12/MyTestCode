@@ -28,9 +28,10 @@
         [self addSubViews];
         self.backgroundColor = [UIColor blackColor];
         self.contentView.backgroundColor = [UIColor orangeColor];
+        
         // UIGestureRecognizer - NSObject
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-        [self.contentView addGestureRecognizer:tap];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+//        [self.contentView addGestureRecognizer:tap];
     }
     return self;
 }
@@ -41,6 +42,8 @@
     [self.contentView addSubview:self.imgView];
 }
 
+/* gesture
+ 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
     NSLog(@"ZJTableViewCell gestureRecognizerShouldBegin gestureRecognizer:%@",gestureRecognizer);
     return  YES;
@@ -78,7 +81,8 @@
     NSLog(@"ZJTableViewCell shouldBeRequiredToFailByGestureRecognizer ges:%@ otherGes:%@",gestureRecognizer,otherGestureRecognizer);
     return  YES;
 }
-
+*/
+ 
 - (void)tapAction:(UITapGestureRecognizer *)tap{
     NSLog(@"tapAction tap:%@",tap);
 }
@@ -120,7 +124,6 @@
     [super touchesCancelled:touches withEvent:event];
 
     NSLog( @"ZJDebug - ZJTableViewCell - touchesCancelled touches: %p ",&touches);
-
 }
 
 

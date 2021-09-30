@@ -14,6 +14,8 @@
 #import "ZJTableViewCell.h"
 #import "ZJView.h"
 #import <objc/runtime.h>
+#import "ZJBaseTableViewCell.h"
+#import "ZJConfigInfo.h"
 
 static const NSInteger kItemCount = 4;
 
@@ -29,6 +31,8 @@ static const NSInteger kItemCount = 4;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"ViewController";
+    
     // Do any additional setup after loading the view.
     
     //打印堆栈信息
@@ -49,14 +53,10 @@ static const NSInteger kItemCount = 4;
 
     
     self.myView = [[ZJView alloc] initWithFrame:self.view.frame];
-    self.view = self.myView;
+//    self.view = self.myView;
     [self.view addSubview:self.tableView];
-    self.tableView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 64, self.view.frame.size.width, self.view.frame.size.height - 64) ;
-    
-//    self.dataArr = @[@"title1",@"title2",@"title3"];
-//    _dataArr = self.dataArr;
+    self.tableView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + kZJStatusBarHeight, self.view.frame.size.width, self.view.frame.size.height - kZJStatusBarHeight) ;
     [self.tableView reloadData];
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -71,17 +71,33 @@ static const NSInteger kItemCount = 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZJTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZJTableViewCell.indentifier forIndexPath:indexPath];
-    if (cell == nil){
-        cell = [[ZJTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ZJTableViewCell.indentifier];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    id title = [self.dataArr objectAtIndex:indexPath.row];
-    if([title isKindOfClass:[NSString class]]){
-        NSString *t = (NSString *)title;
-        [cell configTitle:t num:indexPath.row];
-    }
-    return cell;
+    ///cell == nil 没有用
+//    if (cell == nil){
+        UITableViewCell *cell = nil;
+        if (indexPath.row < 3) {
+            ZJTableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:ZJTableViewCell.indentifier forIndexPath:indexPath];
+
+//            cell1 = [[ZJTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ZJTableViewCell.indentifier];
+            cell1.selectionStyle = UITableViewCellSelectionStyleGray;
+            id title = [self.dataArr objectAtIndex:indexPath.row];
+            if([title isKindOfClass:[NSString class]]){
+                NSString *t = (NSString *)title;
+                [cell1 configTitle:t num:indexPath.row];
+            }
+            cell = cell1;
+        }else{
+            ZJBaseTableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:ZJBaseTableViewCell.indentifier forIndexPath:indexPath];
+            id title = [self.dataArr objectAtIndex:indexPath.row];
+            if([title isKindOfClass:[NSString class]]){
+                NSString *t = (NSString *)title;
+                cell2.textLabel.text = t;
+            }
+            cell = cell2;
+        }
+//    }
+    
+    
+    return cell ?: [[UITableViewCell alloc] init];
 }
 
 #pragma mark - didSelectRowAtIndexPath action
@@ -92,8 +108,12 @@ static const NSInteger kItemCount = 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row < 3) {
+        return 100;
+    }else{
+        return 44;
+    }
     
-    return 144;
 }
 
 #pragma mark - getter && setter
@@ -111,16 +131,16 @@ static const NSInteger kItemCount = 4;
         _tableView.delaysContentTouches = false;
         _tableView.estimatedRowHeight = 44;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-//        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         [_tableView registerClass:ZJTableViewCell.class forCellReuseIdentifier:ZJTableViewCell.indentifier];
+        [_tableView registerClass:ZJBaseTableViewCell.class forCellReuseIdentifier:ZJBaseTableViewCell.indentifier];
     }
     return  _tableView;
 }
 
 - (NSArray *)dataArr{
     if (!_dataArr) {
-        NSArray *desArr = @[@"title1",@"title2",@"title3"];
+        NSArray *desArr = @[@"title1",@"title2",@"title3",@"WebKit touch"];
         NSMutableArray *arr = @[].mutableCopy;
         for (int i = 0; i < desArr.count; ++i) {
             [arr addObject:[NSString stringWithFormat:@"%d - %@",i, desArr[i]] ];
@@ -133,7 +153,6 @@ static const NSInteger kItemCount = 4;
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 //    NSLog( @"ZJDebug - touchesBegan touches: %@ ",touches);
     NSLog( @"ZJDebug - VC - touchesBegan touches: %p ",&touches);
-
 }
 
 
