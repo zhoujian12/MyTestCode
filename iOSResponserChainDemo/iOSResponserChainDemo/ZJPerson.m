@@ -10,4 +10,13 @@
 
 @implementation ZJPerson
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _name = @"ChoosingSl";
+    }
+    return self;
+}
+
 @end
