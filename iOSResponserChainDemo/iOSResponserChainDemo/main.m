@@ -16,11 +16,13 @@ int main(int argc, char * argv[]) {
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
         
         // test different between new and alloc
-        ZJPerson *z1 = [ZJPerson new];
-        ZJPerson *z2 = [[ZJPerson alloc] init];
+//        ZJPerson *z1 = [ZJPerson new];
+//        ZJPerson *z2 = [[ZJPerson alloc] init];
         
         
-        
+        UIViewController *vc = [UIViewController new];
+        UITabBarController *rootVC = (UITabBarController *)vc;
+//        NSLog(@"rootVC.viewControllers : %@",rootVC.viewControllers);
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

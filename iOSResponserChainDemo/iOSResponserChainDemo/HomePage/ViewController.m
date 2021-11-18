@@ -17,6 +17,8 @@
 #import "ZJBaseTableViewCell.h"
 #import "ZJConfigInfo.h"
 #import "ZJWebViewController.h"
+#import "ZJPerson.h"
+
 
 static const NSInteger kItemCount = 4;
 
@@ -26,6 +28,7 @@ static const NSInteger kItemCount = 4;
 @property (nonatomic, strong) NSArray *dataArr;
 @property(nonatomic ,strong)UIView *myView;
 
+
 @end
 
 @implementation ViewController
@@ -34,6 +37,12 @@ static const NSInteger kItemCount = 4;
     [super viewDidLoad];
     self.title = @"ViewController";
     
+    ZJPerson *p1 = [self fetchPersonData];
+    NSLog(@"p1.name : %@",p1.name);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)) , dispatch_get_main_queue(), ^{
+        NSLog(@"p1.name --1 : %@",p1.name);
+    });
+    return;
     // Do any additional setup after loading the view.
     
     //打印堆栈信息
@@ -58,6 +67,21 @@ static const NSInteger kItemCount = 4;
     [self.view addSubview:self.tableView];
     self.tableView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + kZJStatusBarHeight, self.view.frame.size.width, self.view.frame.size.height - kZJStatusBarHeight) ;
     [self.tableView reloadData];
+}
+
+- (ZJPerson *)fetchPersonData{
+//    ZJPerson *p = [[ZJPerson alloc] init];
+    ZJPerson *p = [ZJPerson new];
+    NSLog(@"p.name : %@",p.name);
+    dispatch_semaphore_t signal = dispatch_semaphore_create(0);
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)) , dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        p.name = @"haha";
+        NSLog(@"p.name --1 : %@",p.name);
+        dispatch_semaphore_signal(signal);
+    });
+    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);
+    return p;
 }
 
 #pragma mark - UITableViewDataSource

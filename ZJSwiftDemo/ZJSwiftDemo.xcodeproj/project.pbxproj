@@ -13,6 +13,7 @@
 		23BD1F7D27269C9700ADD53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BD1F7B27269C9700ADD53D /* Main.storyboard */; };
 		23BD1F7F27269C9B00ADD53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BD1F7E27269C9B00ADD53D /* Assets.xcassets */; };
 		23BD1F8227269C9B00ADD53D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BD1F8027269C9B00ADD53D /* LaunchScreen.storyboard */; };
+		23FCFA49273BAF1100439CCD /* ThreadSafeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCFA48273BAF1100439CCD /* ThreadSafeTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		23BD1F7E27269C9B00ADD53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23BD1F8127269C9B00ADD53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23BD1F8327269C9B00ADD53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23FCFA48273BAF1100439CCD /* ThreadSafeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				23BD1F7527269C9700ADD53D /* AppDelegate.swift */,
 				23BD1F7727269C9700ADD53D /* SceneDelegate.swift */,
 				23BD1F7927269C9700ADD53D /* ViewController.swift */,
+				23FCFA48273BAF1100439CCD /* ThreadSafeTools.swift */,
 				23BD1F7B27269C9700ADD53D /* Main.storyboard */,
 				23BD1F7E27269C9B00ADD53D /* Assets.xcassets */,
 				23BD1F8027269C9B00ADD53D /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FCFA49273BAF1100439CCD /* ThreadSafeTools.swift in Sources */,
 				23BD1F7A27269C9700ADD53D /* ViewController.swift in Sources */,
 				23BD1F7627269C9700ADD53D /* AppDelegate.swift in Sources */,
 				23BD1F7827269C9700ADD53D /* SceneDelegate.swift in Sources */,
