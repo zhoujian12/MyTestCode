@@ -283,3 +283,6 @@ let isEvenAlt2: (Int8) -> Bool = { $0 % 2 == 0 }
 let isEvenAlt3 = { $0 % 2 == 0 } as (Int8) -> Bool
 isEven(4)
 isEvenAlt3(3)
+
+
+///swift 获取数组中某个元素的下标

@@ -27,7 +27,7 @@ static const NSInteger kItemCount = 4;
 @property(nonatomic ,strong)UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArr;
 @property(nonatomic ,strong)UIView *myView;
-
+@property (nonatomic, assign) NSInteger isRefer;
 
 @end
 
@@ -36,6 +36,33 @@ static const NSInteger kItemCount = 4;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ViewController";
+    
+//    dispatch_queue_set_specific(dispatch_get_main_queue(), key, @"main", NULL);
+
+    //异步加入到全局并发队列中
+     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    //异步加入到主队列中
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"main thread: %d", [NSThread isMainThread]);
+                NSLog(@"2---%@",[NSThread currentThread]);
+                // 判断是否是主队列
+//                void *value = dispatch_get_specific(key);//返回与当前分派队列关联的键的值。
+//                NSLog(@"main queue: %d", value != NULL);
+            });
+        });
+     
+    NSLog(@"1---%@",[NSThread currentThread]);
+
+        NSLog(@"dispatch_main会堵塞主线程");
+//        dispatch_main();
+        NSLog(@"查看是否堵塞主线程");
+    return;
+    
+    for (id obj in @[@0,@1,@2,@3,@4,@5,@6,@7,@8,@9]) {
+        NSLog(@"obj: %@ - (long)self.isRefer:%ld true or false:%@ self.isRefer:%@",obj,(long)self.isRefer,self.isRefer == 0 ? @YES : @NO,self.isRefer);
+        
+    }
+    return;
     
     ZJPerson *p1 = [self fetchPersonData];
     NSLog(@"p1.name : %@",p1.name);

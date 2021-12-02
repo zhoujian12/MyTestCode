@@ -104,3 +104,75 @@ numbers
 
 //swift gcd
 
+struct HTTPRequest {
+    fileprivate class Storage {
+        var path: String
+        var headers: [String: String]
+        init(path: String, headers: [String: String]) {
+            self.path = path
+            self.headers = headers
+        }
+    }
+    private var storage: Storage
+    init(path: String, headers: [String: String]) {
+        storage = Storage(path: path, headers: headers)
+    }
+}
+
+extension HTTPRequest.Storage {
+    func copy() -> HTTPRequest.Storage { print("Making a copy...") // 调试语句
+    return HTTPRequest.Storage(path: path, headers: headers)
+ }
+}
+
+//extension HTTPRequest {
+//    var path: String {
+//        get { return storage.path }
+//        set {
+//            storage = storage.copy()
+//            storage.path = newValue
+//        }
+//    }
+//    var headers: [String: String] {
+//        get { return storage.headers }
+//        set {
+//            storage = storage.copy()
+//            storage.headers = newValue
+//        }
+//    }
+//}
+
+extension HTTPRequest {
+    private var storageForWriting: HTTPRequest.Storage {
+        mutating get {
+            if !isKnownUniquelyReferenced(&storage) {
+                self.storage = storage.copy()
+            }
+            return storage
+        }
+    }
+    var path: String {
+        get { return storage.path }
+        set { storageForWriting.path = newValue }
+    }
+    var headers: [String: String] {
+        get { return storage.headers }
+        set { storageForWriting.headers = newValue
+        }
+    }
+}
+
+let req1 = HTTPRequest(path: "/home", headers: [:])
+var req2 = req1
+req2.path = "/users"
+req1.path
+assert(req1.path == "/home") // 通过
+
+print("----")
+var req = HTTPRequest(path: "/home", headers: [:])
+for x in 0..<5 { req.headers["X-RequestId"] = "\(x)" }
+
+print("----")
+var req3 = HTTPRequest(path: "/home", headers: [:])
+var copy = req3
+for x in 0..<5 { req3.headers["X-RequestId"] = "\(x)" }
